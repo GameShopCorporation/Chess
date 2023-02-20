@@ -22,10 +22,17 @@ import java.io.File;
 public class AppMain extends SimpleApplication {
 
     ChessTileBase chessTileBase;
+
+    /**
+     * Release Variable Is For Google Play Release.
+     * False When Focusing On One Model.
+     * */
+    boolean release = false;
+
     @Override
     public void simpleInitApp() {
-        settings.setBitsPerPixel(32);
 
+        settings.setBitsPerPixel(32);
         settings.setSamples(32);
         settings.setFrameRate(120);
         settings.setVSync(true);
@@ -33,22 +40,39 @@ public class AppMain extends SimpleApplication {
         settings.setDepthBits(32);
         //settings.setFrequency(120);
 
-        chessTileBase = new ChessTileBase(this);
+        if (release) {
 
 
+        } else {
+            chessTileBase = new ChessTileBase(this);
 
+        }
     }
 
 
     @Override
     public void simpleUpdate(float tpf) {
         //TODO: add update code
+        if (release) {
+
+
+        } else {
+            //chessTileBase = new ChessTileBase(this);
+           //chessTileBase.updateRender();
+        }
     }
 
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
 
-       chessTileBase.updateRender();
+        if (release) {
+
+
+        } else {
+           // chessTileBase = new ChessTileBase(this);
+            chessTileBase.updateRender();
+        }
+
     }
 }
