@@ -24,9 +24,10 @@ public class AppMain extends SimpleApplication {
     ChessTileBase chessTileBase;
     @Override
     public void simpleInitApp() {
+        settings.setSamples(32);
+        settings.setFrameRate(120);
+        chessTileBase = new ChessTileBase(this);
 
-        settings.setFrameRate(30);
-         chessTileBase = new ChessTileBase(this);
 
 
     }

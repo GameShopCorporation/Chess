@@ -16,10 +16,6 @@ public class ChessTileBase extends CurrencyMesh{
 
         this.vertices.clear();
 
-
-
-//        vertices.add(new Vector3f(0,0,0));
-
         vertices.add(new Vector3f(0,0,0));
         vertices.add(new Vector3f(8,0,0));
         vertices.add(new Vector3f(0,2,0));
@@ -39,6 +35,17 @@ public class ChessTileBase extends CurrencyMesh{
         vertices.add(new Vector3f(8,0,-8));
         vertices.add(new Vector3f(0,2,-8));
         vertices.add(new Vector3f(8,2,-8));
+
+        //Top And Bottom
+        vertices.add(new Vector3f(0,2,0));
+        vertices.add(new Vector3f(8,2,-8));
+        vertices.add(new Vector3f(0,2,-8));
+        vertices.add(new Vector3f(8,2,0));
+
+        vertices.add(new Vector3f(0,0,0));
+        vertices.add(new Vector3f(8,0,-8));
+        vertices.add(new Vector3f(0,0,-8));
+        vertices.add(new Vector3f(8,0,0));
 
         indexes.add(2);
         indexes.add(0);
@@ -82,10 +89,21 @@ public class ChessTileBase extends CurrencyMesh{
         indexes.add(3 + 20);
         indexes.add(2 + 20);
 
+        indexes.add(2 + 24);
+        indexes.add(0 + 24);
+        indexes.add(1 + 24);
+        indexes.add(1 + 24);
+        indexes.add(3 + 24);
+        indexes.add(2 + 24);
+
+        indexes.add(2 + 28);
+        indexes.add(0 + 28);
+        indexes.add(1 + 28);
+        indexes.add(1 + 28);
+        indexes.add(3 + 28);
+        indexes.add(2 + 28);
+
         polys.add(new Poly(app, vertices, texCoord, indexes, ColorRGBA.fromRGBA255(0, 0, 128, 255)));
-
-
-
 
 
     }
