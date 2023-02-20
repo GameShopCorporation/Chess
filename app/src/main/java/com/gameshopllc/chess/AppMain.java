@@ -21,25 +21,13 @@ import java.io.File;
  */
 public class AppMain extends SimpleApplication {
 
-//    public static void main(String[] args) {
-//        AppMain app = new AppMain();
-//        AppSettings settings = new AppSettings(true);
-//        settings.setResolution(1920,1080);
-//        settings.setFullscreen(true);
-//        settings.setFrameRate(120);
-//
-//
-//
-//        app.setSettings(settings);
-//        app.start();
-//    }
-
+    ChessTileBase chessTileBase;
     @Override
     public void simpleInitApp() {
 
         settings.setFrameRate(30);
+         chessTileBase = new ChessTileBase(this);
 
-        stateManager.attach(new VideoRecorderAppState()); //start recording
 
     }
 
@@ -52,5 +40,7 @@ public class AppMain extends SimpleApplication {
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
+
+       chessTileBase.updateRender();
     }
 }

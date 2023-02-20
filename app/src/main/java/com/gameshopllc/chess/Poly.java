@@ -2,6 +2,7 @@ package com.gameshopllc.chess;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
+import com.jme3.material.RenderState;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
@@ -40,7 +41,7 @@ public class Poly {
         this.texCoord = new ArrayList<Vector2f>();
         this.indexes = new ArrayList<Integer>();
 
-        this.vertices = vertices;
+        this.vertices.addAll(vertices);
         this.texCoord = texCoord;
         this.indexes = indexes;
 
@@ -53,7 +54,7 @@ public class Poly {
         mat = new Material(app.getAssetManager(),
                 "Common/MatDefs/Misc/Unshaded.j3md");
         mat.setColor("Color", color);
-
+        mat.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
         geo.setMaterial(mat);
         node.attachChild(geo);
         app.getRootNode().attachChild(node);
