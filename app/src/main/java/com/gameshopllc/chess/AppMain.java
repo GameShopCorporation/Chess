@@ -24,8 +24,15 @@ public class AppMain extends SimpleApplication {
     ChessTileBase chessTileBase;
     @Override
     public void simpleInitApp() {
+        settings.setBitsPerPixel(32);
+
         settings.setSamples(32);
         settings.setFrameRate(120);
+        settings.setVSync(true);
+        settings.setStencilBits(8);
+        settings.setDepthBits(32);
+        //settings.setFrequency(120);
+
         chessTileBase = new ChessTileBase(this);
 
 
