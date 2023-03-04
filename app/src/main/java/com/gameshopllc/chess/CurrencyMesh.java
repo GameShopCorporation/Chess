@@ -26,7 +26,7 @@ public class CurrencyMesh {
     //public ArrayList<ArrayList<Vector3f>> vertices;
     public ArrayList<Vector2f> texCoord;
     public ArrayList<Integer> indexes;
-    public ArrayList<Poly> polys;
+    public Poly poly;
 
     public Node node;
 
@@ -39,7 +39,7 @@ public class CurrencyMesh {
         vertices = new ArrayList<Vector3f>();
         texCoord = new ArrayList<Vector2f>();
         indexes = new ArrayList<Integer>();
-        polys = new ArrayList<Poly>();
+        //poly = new Poly();//new ArrayList<Poly>();
 
         node = new Node("node");
 
@@ -50,6 +50,7 @@ public class CurrencyMesh {
 
 
 
+
         //Poly poly = new Poly(app, vertices, texCoord, indexes);
 
 
@@ -57,9 +58,9 @@ public class CurrencyMesh {
 
     public void updateRender(){
 
-        for (Poly poly: polys){
+        //for (Poly poly: polys){
             poly.updateRender();
-        }
+      //  }
     }
 
 }

@@ -1,18 +1,17 @@
 package com.gameshopllc.chess;
 
 import com.jme3.app.SimpleApplication;
+import com.jme3.input.controls.ActionListener;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 
-import java.util.ArrayList;
 import java.util.Vector;
 
-public class ChessTileBase extends CurrencyMesh{
+public class Pawn extends ChessTileBase {
+    public Pawn(SimpleApplication app, ColorRGBA color, Vector3f coordinate) {
+        super(app, color, coordinate);
 
-
-    public ChessTileBase(SimpleApplication app, ColorRGBA color, Vector3f position) {
-        super(app);
-
+        poly.geo.setLocalTranslation(0,coordinate.y,0);
 
         this.vertices.clear();
 
@@ -105,9 +104,11 @@ public class ChessTileBase extends CurrencyMesh{
         indexes.add(3 + 28);
         indexes.add(2 + 28);
 
-        poly = new Poly(app, vertices, texCoord, indexes, color);
 
 
-        poly.geo.setLocalTranslation(0,0,0);
+
+
     }
+
+
 }
